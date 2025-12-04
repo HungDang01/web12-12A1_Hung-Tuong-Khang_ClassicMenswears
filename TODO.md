@@ -1,0 +1,6 @@
+- [x] Update navbar: add flex-wrap for small screens, make gaps responsive using clamp()
+- [x] Adjust Intro section: reduce excessive padding-left, make it responsive with clamp()
+- [x] Fix Sub-genre sections: make margins and paddings responsive, adjust image positions
+- [x] Adjust image-row and containers: set heights to auto on mobile for better scaling
+- [x] Ensure Overall and Contact sections are fully responsive with percentage widths and responsive paddings
+- [x] Test and finalize changes for smooth scaling across devices

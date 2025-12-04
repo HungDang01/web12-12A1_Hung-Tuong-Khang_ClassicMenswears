@@ -1,0 +1,630 @@
+body {
+    background-color: #fafaf4; /* light gray */
+    margin: 0;                 /* remove default spacing */
+    padding: 0;                /* optional, remove default padding */
+}
+.navbar {
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    gap: clamp(20px, 5vw, 150px);
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Bodoni 72", serif;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    z-index: 1000;
+    color:white;
+    padding-top: 7px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.navbar.scrolled {
+    background-color: beige;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    color: black;
+}
+.navbar .Signin{
+    margin-left:auto;
+}
+.navbar p {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.navbar p::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;              /* space under text */
+    left: 0;
+    background-color: #f39c12; /* underline color */
+    transition: width 0.3s;
+}
+
+.navbar p:hover::after {
+    width: 100%;               /* underline grows on hover */
+}
+.navbar p:hover {
+    color: #f39c12;            /* change to your desired color */
+}
+img {
+    height: auto
+}
+.navbar img {
+    padding-left: 50px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.cover {
+  position: relative;       /* make container a reference for absolute positioning */
+  width: 100%;
+  overflow: hidden;         /* optional, clips anything outside */
+}
+.cover video {
+  width: 100%;              /* video fills container */
+  height: auto;
+  display: block;
+    object-fit: cover; /* crops/adjusts video to fit */
+}
+.cover h1 {
+  position: absolute;       /* position relative to container */
+  top: 40%;                 /* vertical center */
+  left: 50%;                /* horizontal center */
+  transform: translate(-50%, -50%); /* truly center both axes */
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* optional for readability */
+  pointer-events: none;      /* optional: allows clicking through the text */
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+    font-weight: 500;
+}
+.image-row {
+    display: flex;
+    gap: 10px;             /* space between the images */
+    width: 100%;
+    height: 1200px;         /* height of images */
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    position: relative;    /* for absolutely positioning the text */
+    width: 50%;            /* each image takes half width */
+    height: 100%;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* keeps images aligned and fills container */
+}
+
+.image-text {
+    position: absolute;
+    top: 80%;              /* vertical center */
+    left: 50%;             /* horizontal center */
+    transform: translate(-50%, -50%); /* perfectly centered */
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* improves readability */
+    pointer-events: none;  /* allows clicks to pass through */
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+    font-weight: 500;
+}
+.Intro {
+    display: flex;           /* side by side layout */
+    width: 100vw;
+    min-height: 100vh;       /* minimum full viewport height */
+}
+
+.Intro img {
+    flex: 1;
+    height: 100%;
+    object-fit: contain;
+    object-position: 120% center; /* shift almost all the way to the right */
+}
+
+.Intro .content {
+    flex: 1;
+    height: 800px;            /* fill parent height */
+    display: flex;
+    flex-direction: column;  /* stack h1 and p */
+    justify-content: center; /* vertically center */
+    align-items: flex-start; /* align text to left */
+    padding: 50px;
+    padding-left: clamp(50px, 1vw, 150px);
+    box-sizing: border-box;
+    padding-top: 200px;
+    padding-right: 50px;
+    text-align: justify;
+      text-indent: 40px;  /* adjust the number as you like */
+    max-width: 950px;
+    
+}
+
+.Intro h1 {
+    margin: 0 0 20px 0;      /* space below heading */
+    font-size: 36px;
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Bodoni 72", serif;
+    color: #882132;
+}
+
+.Intro p {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.5;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+    color: #042c1e;
+}
+.Sub-genre .TT {
+    font-size: 36px;
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Bodoni 72", serif;
+    color: #882132;
+    text-align: center;
+    padding-top: clamp(100px, 25vh, 300px);
+}
+.Sub-genre p {
+  width: 600px;
+  height: 100px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+  color: #042c1e;
+  font-size: 25px;
+  text-align: justify;
+  text-indent: 40px;  /* adjust the number as you like */
+}
+
+.Sub-genre .gen1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Sub-genre .gen1 h2 {
+    margin-bottom: 0px;
+    padding-top: clamp(100px, 20vh, 200px);
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Bodoni 72", serif;
+    font-size: 30px;
+    color: #882132;
+    text-align: center;
+}
+
+.Sub-genre .gen1 img {
+    max-width: 100%;
+    height: auto;
+}
+.Sub-genre .gen2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.Sub-genre .gen2 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.Sub-genre .gen2 .txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0px;
+    text-align: center;
+}
+.Sub-genre h2{
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Bodoni 72", serif;
+    font-size: 30px;
+    color: #882132;
+}
+.Sub-genre .gen3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.Sub-genre .gen3 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.Sub-genre .gen3 .txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0px;
+    text-align: center;
+}
+.Overall .Philosophy {
+    font-size: 36px;
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Bodoni 72", serif;
+    color: #882132;
+    text-align: center;
+    padding-top: 500px;
+}
+
+.Overall img {
+    max-width: 100%;
+    height: auto;
+}
+.Overall p {
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+  color: #042c1e;
+  font-size: 25px;
+
+  text-align: justify;
+
+  /* Center the block horizontally */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Optional: add padding if you want space inside the box */
+  padding: 20px;
+
+  text-indent: 40px;  /* adjust the number as you like */
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  padding-top: 0px;
+}
+.Contact {
+    display: flex;          /* make child divs horizontal */
+    flex-wrap: wrap;        /* allow wrapping on small screens */
+    justify-content: center;
+    gap: clamp(30px, 10vw, 100px); /* responsive gap */
+    background-color: black;
+    color: #ffffff;
+    padding: clamp(10px, 5vw, 20px); /* responsive padding */
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+    width: 100%;            /* full width for responsiveness */
+    padding-bottom: clamp(50px, 15vh, 300px); /* responsive bottom padding */
+}
+
+.Contact h2 {
+    font-size: 18px;
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Bodoni 72", serif;
+}
+.Contact li {
+    font-size: 12px;
+    list-style: none;
+
+}
+.Contact ul {
+    list-style: none;   /* removes bullets */
+    padding: 0;         /* removes default indent */
+    margin: 0;          /* removes extra spacing */
+}
+
+.Contact ul li {
+    margin: 0;          /* optional: removes spacing between items if needed */
+    padding: 0;         /* ensures no extra indent */
+    line-height: 3;
+}
+.Contact li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;              /* space under text */
+    left: 0;
+    background-color: #f39c12; /* underline color */
+    transition: width 0.3s;
+}
+
+.Contact li:hover::after {
+    width: 100%;               /* underline grows on hover */
+}
+.Contact li:hover {
+    color: #f39c12;            /* change to your desired color */
+}
+
+.Contact .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+}
+
+.Contact .contact-form h2 {
+    font-size: 18px;
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Bodoni 72", serif;
+    margin-bottom: 10px;
+}
+
+.Contact .contact-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+    font-size: 14px;
+    width: 200px;
+}
+
+.Contact .contact-form button {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, Trebuchet MS, sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.Contact .contact-form button:hover {
+    background-color: #e67e22;
+}
+
+/* Media queries for responsiveness */
+
+@media (min-width: 1200px) {
+    .navbar {
+        padding-top: 10px;
+        gap: 150px;
+    }
+
+    .Intro {
+        padding: 50px 100px;
+    }
+
+    .Sub-genre .gen2,
+    .Sub-genre .gen3 {
+        padding: 50px 100px;
+    }
+
+    .Contact {
+        padding: 50px 100px;
+        padding-bottom: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        gap: 50px;
+    }
+
+    .image-row {
+        height: 800px;
+    }
+
+    .Intro {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .Intro img {
+        width: 100%;
+        height: auto;
+    }
+
+    .Intro .content {
+        width: 100%;
+        padding: 20px;
+        padding-top: 50px;
+    }
+
+    .Sub-genre .gen2,
+    .Sub-genre .gen3 {
+        flex-direction: column;
+    }
+
+    .Sub-genre .gen2 img,
+    .Sub-genre .gen3 img {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        padding-top: 0;
+        padding: 20px;
+        order: 0;
+    }
+
+    .Sub-genre .gen2 .txt,
+    .Sub-genre .gen3 .txt {
+        padding: 20px;
+    }
+    .Sub-genre .gen1 img {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 50px;
+        padding: 20px;
+        order: 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        gap: 20px;
+        font-size: 10px;
+    }
+
+    .cover h1 {
+        font-size: 28px;
+    }
+
+    .image-row {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .Intro {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .Intro img {
+        width: 100%;
+        height: auto;
+    }
+
+    .Intro .content {
+        width: 100%;
+        padding: 20px;
+        padding-top: 50px;
+    }
+
+    .Intro h1 {
+        font-size: 28px;
+    }
+
+    .Intro p {
+        font-size: 20px;
+    }
+
+    .Sub-genre .TT {
+        font-size: 28px;
+        padding-top: 100px;
+    }
+
+    .Sub-genre p {
+        width: 90%;
+        font-size: 20px;
+    }
+
+    .Sub-genre .gen1 h2 {
+        font-size: 24px;
+        padding-top: 100px;
+    }
+
+    .Sub-genre h2 {
+        font-size: 24px;
+    }
+
+    .Sub-genre .gen2,
+    .Sub-genre .gen3 {
+        flex-direction: column;
+    }
+
+    .Sub-genre .gen2 img,
+    .Sub-genre .gen3 img {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        order: 0;
+    }
+
+    .Sub-genre .gen2 .txt,
+    .Sub-genre .gen3 .txt {
+        padding: 20px;
+    }
+
+    .Overall .Philosophy {
+        font-size: 28px;
+        padding-top: 200px;
+    }
+
+    .Overall p {
+        width: 90%;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .Contact {
+        gap: 50px;
+        padding: 20px;
+        padding-bottom: 100px;
+    }
+
+    .Contact h2 {
+        font-size: 16px;
+    }
+
+    .Contact li {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .navbar img {
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .cover h1 {
+        font-size: 24px;
+    }
+
+    .image-container {
+        height: auto;
+    }
+
+    .image-text {
+        font-size: 18px;
+    }
+
+    .Intro h1 {
+        font-size: 24px;
+    }
+
+    .Intro p {
+        font-size: 18px;
+    }
+
+    .Sub-genre .TT {
+        font-size: 24px;
+    }
+
+    .Sub-genre p {
+        font-size: 18px;
+    }
+
+    .Sub-genre .gen1 h2 {
+        font-size: 20px;
+    }
+
+    .Sub-genre h2 {
+        font-size: 20px;
+    }
+
+    .Overall .Philosophy {
+        font-size: 24px;
+    }
+
+    .Overall p {
+        font-size: 18px;
+    }
+
+    .Contact {
+        gap: 30px;
+        padding: 10px;
+        padding-bottom: 50px;
+    }
+ 
+    .Contact h2 {
+        font-size: 14px;
+    }
+
+    .Contact li {
+        font-size: 10px;
+    }
+}
